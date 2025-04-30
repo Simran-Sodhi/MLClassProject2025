@@ -1,10 +1,5 @@
 # MLClassProject2025
 
-Machine Learning Methods for Lung Cancer Diagnosis and Subtype Identification from RNA Sequencing Data
-
-We have implemented 3 machine learning methods:
-
-Dimensionality reduction
-K means clustering
-Classification
-The code for each of the method is available in the respective branch.
+This branch contains:
+- R script `diff_genes_for_clusters.R` for one-vs-rest DESeq2 differential expression per cluster
+- Python notebook `deseq2_analysis.ipynb` for GO/KEGG enrichment analysis using GSEA
