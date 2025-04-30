@@ -1,10 +1,6 @@
 # MLClassProject2025
 
-Machine Learning Methods for Lung Cancer Diagnosis and Subtype Identification from RNA Sequencing Data.
-
-We have implemented 3 machine learning methods:
-
-Dimensionality reduction
-K means clustering
-Classification
-The code for each of the method is available in the respective branch.
+This branch provides scripts for:
+- Visualizing samples using PCA
+- Performing K-means clustering on batch-corrected data
+- Determining the optimal number of clusters using the elbow method
