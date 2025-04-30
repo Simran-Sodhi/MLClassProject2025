@@ -1,6 +1,7 @@
 # MLClassProject2025
 
 **Machine Learning Methods for Lung Cancer Diagnosis and Subtype Identification from RNA Sequencing Data**
+**GitHub Repository:** [MLClassProject2025](https://github.com/Simran-Sodhi/MLClassProject2025)
 
 This repository implements a pipeline for analyzing RNA-seq data from lung cancer samples using various machine learning techniques, including dimensionality reduction, unsupervised clustering, and supervised classification. The goal is to diagnose cancer presence and identify subtypes using RNA sequencing data.
 
