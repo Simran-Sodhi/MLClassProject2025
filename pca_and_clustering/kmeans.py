@@ -11,7 +11,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import os
 
 
-# Define output directory.
+# Define output directory
 baseline_save_directory = './output'
 os.makedirs(baseline_save_directory, exist_ok=True)
 
@@ -56,18 +56,17 @@ def normalize_rows(A):
 
 def compute_avg_inertia(X, labels, centroids):
     """
-    Compute average within-cluster squared cosine-distance, the formula is shown below:
-      (1/n) ∑_i (1 − cos(x_i, c_{z_i}))^2
+    Compute average within-cluster squared cosine-distance
 
     Parameters
     ----------
-    X : Input data matrix (n_samples × n_features).
-    labels : Cluster assignments for each sample (shape: n_samples).
-    centroids : Cluster centroids (shape: n_clusters × n_features).
+    X : Input data matrix (n_samples × n_features)
+    labels : Cluster assignments for each sample (shape: n_samples)
+    centroids : Cluster centroids (shape: n_clusters × n_features)
 
     Returns
     -------
-    Average squared cosine-distance (inertia).
+    Average squared cosine-distance (inertia)
     """
     Xn = normalize_rows(X)
     Cn = normalize_rows(centroids)
@@ -80,17 +79,17 @@ def elbow_plot(X, ks, max_iter=100):
     """
     Plot the elbow curve for k-means clustering.
     Runs k-means over different numbers of clusters, computes the average squared cosine-distance
-    (inertia) for each, and plots the results. Saves the plot to './output/elbow_plot.png'.
+    (inertia) for each, and plots the results. Saves the plot to './output/elbow_plot.png'
 
     Parameters
     ----------
-    X : Input data matrix (n_samples × n_features), L2-normalized.
-    ks : List of cluster numbers to try.
-    max_iter : Maximum iterations for k-means (default=100).
+    X : Input data matrix (n_samples × n_features), L2-normalized
+    ks : List of cluster numbers to try
+    max_iter : Maximum iterations for k-means (default=100)
 
     Returns
     -------
-    inertias : Average inertia values for each k.
+    inertias : Average inertia values for each k
     """
     inertias = []
     for k in ks:
@@ -114,14 +113,14 @@ def elbow_plot(X, ks, max_iter=100):
 
 
 # --- Load & QC ---
-# Only keep cells with at least 200 genes expressed.
-# Only keep genes expressed in at least 10 cells.
+# Only keep cells with at least 200 genes expressed
+# Only keep genes expressed in at least 10 cells
 adata = sc.read_h5ad('./tpm_unstranded_subset_corrected.h5ad')
 sc.pp.filter_cells(adata, min_genes=200)
 sc.pp.filter_genes(adata, min_cells=10)
 X = adata.X  # raw matrix (cells × genes)
 
-# Standardization.
+# Standardization
 X = sklearn.preprocessing.StandardScaler().fit_transform(X)
 
 
