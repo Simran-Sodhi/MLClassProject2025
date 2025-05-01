@@ -180,7 +180,7 @@ gs = gridspec.GridSpec(2, 2, figure=fig, wspace=0.3, hspace=0.3)
 # --- Row 1: k-Means Results
 ##########################
 
-# (0,0): 2D PCA of k-Means
+# 2D PCA of k-Means
 ax_2dPCA = fig.add_subplot(gs[0, 0])
 sc = ax_2dPCA.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', alpha=0.6)
 ax_2dPCA.scatter(centroids_pca[:, 0], centroids_pca[:, 1], c='red', marker='x', s=100, label='Centroids')
@@ -190,7 +190,7 @@ ax_2dPCA.set_xlabel(f"PC1 ({explained[0]*100:.1f}%)")
 ax_2dPCA.set_ylabel(f"PC2 ({explained[1]*100:.1f}%)")
 
 
-# (0,1): 3D PCA of k-Means
+# 3D PCA of k-Means
 ax_3dPCA = fig.add_subplot(gs[0, 1], projection='3d')
 ax_3dPCA.scatter(X_pca_3d[:, 0], X_pca_3d[:, 1], X_pca_3d[:, 2],
                  c=labels, cmap='viridis', s=50, alpha=0.6)
@@ -211,7 +211,7 @@ ax_3dPCA.set_zlabel(f"PC3 ({explained_3d[2]*100:.1f}%)")
 # --- Row 2: Ground Truth Plots
 ##########################
 
-# (1,0): 2D PCA with Ground Truth
+# 2D PCA with Ground Truth
 ax_gt2dPCA = fig.add_subplot(gs[1, 0])
 ax_gt2dPCA.scatter(X_pca[:, 0], X_pca[:, 1], c=true_labels_enc, cmap='viridis', alpha=0.6)
 ax_gt2dPCA.set_title("2D PCA of Ground Truth")
@@ -220,7 +220,7 @@ ax_gt2dPCA.legend(handles=patches, bbox_to_anchor=(1.05, 1), loc='upper left')
 ax_gt2dPCA.set_xlabel(f"PC1 ({explained[0]*100:.1f}%)")
 ax_gt2dPCA.set_ylabel(f"PC2 ({explained[1]*100:.1f}%)")
 
-# (1,1): 3D PCA with Ground Truth
+# 3D PCA with Ground Truth
 ax_gt3dPCA = fig.add_subplot(gs[1, 1], projection='3d')
 ax_gt3dPCA.scatter(X_pca_3d[:, 0], X_pca_3d[:, 1], X_pca_3d[:, 2],
                    c=true_labels_enc, cmap='viridis', s=50, alpha=0.6)
