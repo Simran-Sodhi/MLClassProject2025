@@ -19,15 +19,16 @@ We use separate branches for each module of the pipeline, along with a consolida
 | Branch Name              | Description                                                |
 |--------------------------|------------------------------------------------------------|
 | `combined_branch`        | Contains the full pipeline, integrating all modules.       |
+| `data_preprocessing` | Extract TPM-normalized gene expression matrix from all samples and save as an AnnData object. |
 | `dimensionality_reduction` | Code for reducing the number of genes based on variability and redundancy. |
-| `batch_effect`           | Code for preprocessing and batch effect correction using pyComBat. |
+| `batch_effect`           | Code for batch effect correction using pyComBat. |
 | `pca_and_clustering`     | PCA visualization and unsupervised clustering via K-means. |
 | `classification`         | Random Forest and SVM classifiers for cancer prediction.   |
 | `diff_exp_analysis`      | R scripts for differential expression analysis (DESeq2) and GSEA validation. |
 
 ## How to Use This Pipeline
 
-1. **Start with a TPM-normalized gene expression matrix** (samples × genes) in the form of an `AnnData` object.
+1. **Start with a TPM-normalized gene expression matrix** (samples × genes) in the form of an `AnnData` object using code in `data_preprocessing`.
 2. **Run the pipeline in this order**:
 
    - **Dimensionality Reduction:**  
